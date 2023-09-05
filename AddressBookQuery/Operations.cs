@@ -301,5 +301,75 @@ namespace AddressBookQuery
                 con.Close();
             }
         }
+        public void CreateAddPerson()
+        {
+            try
+            {
+                Connection();
+                string query = "Create table AddPerson(id int primary key identity(1,1), " +
+                    "contactId int Foreign Key References AddressBook(id), " +
+                    "type int Foreign Key References type(id));";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Created table Successfully");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No table Created " + ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void AddPersonValues(AddressBook obj)
+        {
+            try
+            {
+                Connection();
+                SqlCommand com = new SqlCommand("AddPersonValues", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@contactId", obj.Id);
+                com.Parameters.AddWithValue("@type", obj.Type);
+                con.Open();
+                com.ExecuteNonQuery();
+                Console.WriteLine("Contact Added");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void UsingWithThread(List<AddressBook> list)
+        {
+            DateTime start = DateTime.Now;
+            foreach (var data in list)
+            {
+                Task thread = new Task(() =>
+                {
+                    Console.WriteLine("Being Added:" + data.FirstName);
+                    AddContact(data);
+                    Console.WriteLine("Added:" + data.FirstName);
+                });
+            }
+            DateTime end = DateTime.Now;
+            Console.WriteLine("Duration with Thread: " + (end - start));
+        }
+        public void UsingWithoutThread(List<AddressBook> list)
+        {
+            DateTime start = DateTime.Now;
+            foreach (var data in list)
+            {
+                AddContact(data);
+            }
+            DateTime end = DateTime.Now;
+            Console.WriteLine("Duration without Thread: " + (end - start));
+        }
+       
     }
 }
