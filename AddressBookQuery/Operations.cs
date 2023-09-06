@@ -328,10 +328,10 @@ namespace AddressBookQuery
             try
             {
                 Connection();
-                SqlCommand com = new SqlCommand("AddPersonValues", con);
+                SqlCommand com = new SqlCommand("AddValues", con);
                 com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@contactId", obj.Id);
-                com.Parameters.AddWithValue("@type", obj.Type);
+                com.Parameters.AddWithValue("@Contactid", obj.Id);
+                com.Parameters.AddWithValue("@Typeid", obj.Type);
                 con.Open();
                 com.ExecuteNonQuery();
                 Console.WriteLine("Contact Added");
