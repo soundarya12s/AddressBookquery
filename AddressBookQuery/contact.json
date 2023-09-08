@@ -1,0 +1,48 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "firstname": "Reji",
+      "lastname": "Skaria",
+      "address": "Annikkanadu",
+      "city": "Pathanamthitta",
+      "state": "Kerala",
+      "zip": 123456,
+      "phonenumber": "1234567890",
+      "email": "reji@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstname": "Jessy",
+      "lastname": "Reji",
+      "address": "Annikkanadu",
+      "city": "Pathanamthitta",
+      "state": "Kerala",
+      "zip": 123456,
+      "phonenumber": "1234567890",
+      "email": "jessy@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstname": "Riya",
+      "lastname": "Reji",
+      "address": "Annikkanadu",
+      "city": "Pathanamthitta",
+      "state": "Kerala",
+      "zip": 123456,
+      "phonenumber": "1234567890",
+      "email": "riya@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstname": "Rija",
+      "lastname": "Reji",
+      "address": "Annikkanadu",
+      "city": "Pathanamthitta",
+      "state": "Kerala",
+      "zip": 123456,
+      "phonenumber": "1234567890",
+      "email": "rija@gmail.com"
+    }
+  ]
+}

@@ -29,12 +29,14 @@ namespace AddressBookQuery
             //    PhoneNumber = "1234567890",
             //    Email = "Soundarya@gmail.com"
             //};
-            AddressBook contact2 = new AddressBook()
-            {
-                Id = 6,
-                Type = "2"
-            };
-            operations.AddPersonValues(contact2);
+
+            operations.CreateAddPerson();
+            //AddressBook contact2 = new AddressBook()
+            //{
+            //    Id = 6,
+            //    Type = "2"
+            //};
+            //operations.AddPersonValues(contact2);
             //operations.UpdateContact(contact1);
             //operations.DeleteContact("Soundarya");
             //operations.City("Chennai");
